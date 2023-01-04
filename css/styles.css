@@ -1,0 +1,20 @@
+.graf {
+  background-color: #faf8f8;
+}
+
+
+.axis {
+  font-size: 12px;
+  font-family: "Segoe UI",Arial,sans-serif;
+}
+
+.axis line {
+  stroke-width: 2;
+  stroke: #ccc;
+  stroke-dasharray: 10 5;
+}
+
+.labels {
+  font-size: 18px;
+  font-family: "Segoe UI",Arial,sans-serif;
+}
