@@ -56,6 +56,7 @@ const readData = async () => {
 const loadData = async () => {
   const data = await readData(); // obtener los datos
 
+  // filtrar unicamente los datos del parametro indiciado(filtro)
   const newData = data.filter((d) => d.Parametro === parameter);
 
   x.domain(newData.map((d) => (d.Agno = `${d.Periodo} (${d.Agno})`))).padding(0.2);
