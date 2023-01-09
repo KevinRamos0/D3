@@ -106,7 +106,7 @@ const render = (data) => {
     .attr("y", (d) => y(d.Valor))
     .attr("width", x.bandwidth())
     .attr("height", (d) => chartHeigth - y(d.Valor))
-    .attr("fill", "#ff002399");
+    .attr("fill", "#ff000099");
 
 
     // ejecutar eventos la pasar el mouse por el elemento
