@@ -3,11 +3,12 @@ const chart = d3.select("#chart");
 const options = d3.select("#options");
 
 //generar margenes automaticos
-const margins = { top: 80, right: 20, bottom: 100, left: 150 };
-const totalWith = +chart.style("width").slice(0, -2);
+const margins = { top: 50, right: 20, bottom: 100, left: 150 , end: 20 };
+// const totalWith = +chart.style("width").slice(0, -2);
+const totalWith = 650;
 const totalHeigth = (totalWith * 9) / (totalWith / 90);
 const chartWith = totalWith - margins.left - margins.right;
-const chartHeigth = totalHeigth - margins.top - margins.bottom;
+const chartHeigth = totalHeigth - margins.top - margins.bottom - margins.end;
 console.log(totalHeigth);
 // crear dimensiones del chart
 const svg = chart
@@ -27,9 +28,9 @@ const y = d3.scaleLinear().range([chartHeigth, 0]);
 const xAxis = svg
   .append("g")
   .attr("transform", "translate(0," + chartHeigth + ")")
-  .attr("class", "axis");
+  .attr("class", "axisX");
 
-const yAxis = svg.append("g").attr("class", "axis");
+const yAxis = svg.append("g").attr("class", "axisY");
 
 // por defecto filtrar los datos de este parametro
 let parameter = "Agresión sexual con penetración";

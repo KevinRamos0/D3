@@ -2,16 +2,21 @@
   background-color: #faf8f8;
 }
 
-.axis {
+.axisY {
   font-size: 15px;
   font-family: "Segoe UI",Arial,sans-serif;
 }
 
-.axis line {
-  stroke-width: 2;
-  stroke: #ccc;
-  stroke-dasharray: 10 5;
+.axisX {
+  font-size: 15px;
+  font-family: "Segoe UI",Arial,sans-serif;
 }
+
+.axisX text {
+  transform: rotate(-45deg);
+  text-anchor: end;
+}
+
 
 .labels {
   font-size: 22px;
