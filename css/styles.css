@@ -2,9 +2,8 @@
   background-color: #faf8f8;
 }
 
-
 .axis {
-  font-size: 12px;
+  font-size: 15px;
   font-family: "Segoe UI",Arial,sans-serif;
 }
 
@@ -15,6 +14,17 @@
 }
 
 .labels {
-  font-size: 18px;
+  font-size: 25px;
   font-family: "Segoe UI",Arial,sans-serif;
+  color: #ff0023;
+}
+
+.tooltip {
+  background: #00000099;
+  color: #ffffff;
+  font-size: 15px;
+  font-family: "Segoe UI",Arial,sans-serif;
+  border-radius: 3px;
+  padding: 10px;
+  width: 200px;
 }
