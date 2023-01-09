@@ -108,6 +108,8 @@ const render = (data) => {
     .attr("height", (d) => chartHeigth - y(d.Valor))
     .attr("fill", "#ff002399");
 
+
+    // ejecutar eventos la pasar el mouse por el elemento
   rect
     .on("mouseover", function (d, i) {
       tooltip
