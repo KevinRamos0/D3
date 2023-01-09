@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Actividad 1</title>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 
     <!-- Bootstrap -->
     <link
@@ -14,10 +15,10 @@
       crossorigin="anonymous"
     />
     <!-- Estilos Propios -->
-    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/PieChart/styles.css" />
   </head>
 
-  <body onload="loadDataPieChart()">
+  <body>
     <header>
       <nav class="navbar bg-light shadow">
         <div class="container-fluid">
@@ -38,7 +39,10 @@
           onchange="optionChanged(this.value)"
         ></select>
       </div>
-      <div id="pieChart"></div>
+      <div class="InfraccionesPenales"></div>
+      <div class="ComparacionInfracciones"></div>
+
+      </div>
     </main>
 
     <script
@@ -57,7 +61,13 @@
       integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk"
       crossorigin="anonymous"
     ></script>
-
-    <script src="js/app.js"></script>
   </body>
+
+  <script>
+    $(document).ready(function () {
+      $('.InfraccionesPenales').load('./InfraccionesPenales.html');
+      $('.ComparacionInfracciones').load('./ComparacionInfracciones.html');
+    });
+  </script>
+
 </html>
