@@ -117,7 +117,7 @@ const render = (data) => {
 
   // ejecutar eventos la pasar el mouse por el elemento
   rect
-    .on("mouseover", function (d, i) {
+    .on("mouseover", (d, i) => {
       tooltip
         .html(
           `Valor: ${i.Valor} <br /> Estado: ${i.Estado} <br /> Notas: ${i.Notas}`
@@ -125,13 +125,13 @@ const render = (data) => {
         .style("opacity", 1);
     })
 
-    .on("mousemove", function (event, d) {
+    .on("mousemove", (event, d) => {
       tooltip
         .style("transform", `translateY(-600%)`)
         .style("margin-left", `${event.x - 10}px`);
     })
 
-    .on("mouseout", function () {
+    .on("mouseout", () => {
       tooltip.html(``).style("opacity", 0);
     });
 };
