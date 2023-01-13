@@ -149,7 +149,7 @@ const optionsFilter = async () => {
 };
 
 // aplica el filtro seleccionado para actualizar los datos
-const optionChanged = (option) => {
+const optionChanged = async (option) => {
   parameter = option;
   loadData();
 };
