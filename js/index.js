@@ -189,37 +189,48 @@ const renderPieChart = (newData) => {
   // This make sure that group order remains the same in the pie chart
   const data_ready = pie(Object.entries(data));
 
-  var arc = d3.arc().outerRadius(radius).innerRadius(0);
-
-  const labels = d3
-    .arc()
-    .innerRadius(60)
-    .outerRadius(radius);
+  var arc = d3.arc()
+  .innerRadius(radius - 65)
+  .outerRadius(radius);
 
   // map to data
-  const u = g.selectAll("arc").data(data_ready);
+  //   const u = g.selectAll("arc").data(data_ready);
+  const u = g.selectAll("path").data(data_ready);
 
   // Build the pie chart: Basically, each part of the pie is a path that we build using the arc function.
-  u.enter()
-    .append("path")
-    .attr("d", arc)
-    .attr("fill", (d) => color(d.data[0]))
-    .attr("stroke", "white")
-    .style("stroke-width", "2px")
-    .style("opacity", 1);
-
-  u.enter()
-    .append("text")
+  u.join("path")
     .transition()
     .duration(1000)
-    .text((d) => d.data[0])
-    .attr("transform", (d) => "translate(" + labels.centroid(d) + ")")
-    .style("text-anchor", "middle")
-    .style("font-size", "14px");
+    .attr("d", arc)
+    .attr("fill", (d) => color(d.data[0]))
+    .attr('transform', 'translate(0, 0)')
 
-   u.exit().remove();
+  const legend = g
+    .selectAll(".legend") //the legend and placement
+    .data(color.domain())
+    .enter()
+    .append("g")
+    .attr("class", "circle-legend")
+    .attr("transform", (_, i) => {
+      const offset = (20 * color.domain().length) / 2;
+      const vert = i * 20 - offset;
+      return "translate(-60," + vert + ")";
+    });
+
+  legend
+    .append("circle") //keys
+    .style("fill", color)
+    .style("stroke", color)
+    .attr("cx", 0)
+    .attr("cy", 0)
+    .attr("r", ".5rem");
+
+  legend
+    .append("text") //labels
+    .attr("x", 20)
+    .attr("y", 5)
+    .text((d) => d);
 };
 
-  loadData();
-  optionsFilter();
-
+loadData();
+optionsFilter();
