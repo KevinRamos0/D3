@@ -6,18 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Actividad 1</title>
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-
+    
     <!-- Bootstrap -->
     <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
-      crossorigin="anonymous"
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+    crossorigin="anonymous"
     />
     <!-- Estilos Propios -->
-    <link rel="stylesheet" href="css/PieChart/styles.css" />
+    <link rel="stylesheet" href="css/styles.css" />
   </head>
-
+  
   <body onload="loadData()">
     <header>
       <nav class="navbar bg-light shadow">
@@ -28,46 +28,42 @@
         </div>
       </nav>
     </header>
-
+    
     <main class="container-fluid mt-2">
       <div class="input-group mb-3">
         <label class="input-group-text bg-info" for="options">Tipo de Infracción</label>
         <select
-          class="form-select"
-          aria-label="Default select example"
-          id="options"
-          onchange="optionChanged(this.value)"
+        class="form-select"
+        aria-label="Default select example"
+        id="options"
+        onchange="optionChanged(this.value)"
         ></select>
       </div>
-      <div class="InfraccionesPenales"></div>
-      <div class="ComparacionInfracciones"></div>
-
-      </div>
-    </main>
-
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.6.1/d3.min.js"
-      integrity="sha512-MefNfAGJ/pEy89xLOFs3V6pYPs6AmUhXJrRlydI/9wZuGrqxmrdQ80zKHUcyadAcpH67teDZcBeS6oMJLPtTqw=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    ></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
-      integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js"
-      integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk"
-      crossorigin="anonymous"
-    ></script>
-  </body>
-
-  <script>
-    $(document).ready(function () {
-      $('.InfraccionesPenales').load('./InfraccionesPenales.html');
-      $('.ComparacionInfracciones').load('./ComparacionInfracciones.html');
-    });
-  </script>
-
+      <div class="row">
+        <div id="barChart" class="col">
+        </div>
+        <div id="pieChart" class="col">
+        </div>
+      </div>        
+  </main>
+  
+  <script
+  src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.6.1/d3.min.js"
+  integrity="sha512-MefNfAGJ/pEy89xLOFs3V6pYPs6AmUhXJrRlydI/9wZuGrqxmrdQ80zKHUcyadAcpH67teDZcBeS6oMJLPtTqw=="
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer"
+  ></script>
+  <script
+  src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+  integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+  crossorigin="anonymous"
+  ></script>
+  <script
+  src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js"
+  integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk"
+  crossorigin="anonymous"
+  ></script>
+  <script src="js/index.js"></script>
+  
+</body>
 </html>
