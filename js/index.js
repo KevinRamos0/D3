@@ -1,7 +1,7 @@
 // Seleccionar elemento chart
 const chart = d3.select("#barChart");
 const options = d3.select("#options");
-const pieChart = chart.select("#pieChart");
+const pieChart = d3.select("#pieChart");
 
 //generar margenes automaticos
 const margins = {
@@ -161,8 +161,7 @@ const renderBarChart = (data) => {
  */
 const radius = Math.min(chartWith, chartHeigth) / 2 - margins.top;
 
-const svgPieChart = d3
-  .select("#pieChart")
+const svgPieChart = pieChart
   .append("svg")
   .attr("width", chartWith)
   .attr("height", chartHeigth);
